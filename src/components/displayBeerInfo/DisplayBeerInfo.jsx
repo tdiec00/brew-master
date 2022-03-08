@@ -2,8 +2,7 @@ import {useParams} from "react-router-dom"
 import axios from "axios"
 import {useState, useEffect} from "react"
 import RemoveDuplicates from "../RemoveDuplicates"
-import FavoritesButton from "../FavoritesButton"
-import Alphabetize from "../Alphabetize"
+import FavoritesButton from "../favoritesButton/FavoritesButton"
 import {DisplayBeerInfoContainer} from "../styles/DisplayBeerInfoContainer.styled"
 import {ListContainer} from "../styles/ListContainer.styled"
 import "./displayBeerInfo.css"
@@ -37,14 +36,20 @@ const DisplayBeerInfo = () => {
             <p>{beerData?.ingredients?.yeast}</p>
             <p className="title">Malt List</p>
             {beerData?.ingredients?.malt.map((malt) => {
-              return <p key={malt?.name}>{malt?.name}</p>
+              return (
+                <div className="list-container">
+                  <p key={malt?.name}>{malt?.name}</p>
+                </div>
+              )
             })}
             <p className="title">Hops List</p>
-            <RemoveDuplicates beerData={beerData} />
+            <div className="list-container">
+              <RemoveDuplicates beerData={beerData} />
+            </div>
           </div>
         </div>
 
-        <div className="ingredients-container">
+        <div className="guidelines-container">
           <h1>Brewing Guidline</h1>
           <div className="ingredients-text-container">
             <p className="title">Fermentation Temperature</p>

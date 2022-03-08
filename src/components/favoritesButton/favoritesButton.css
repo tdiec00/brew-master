@@ -1,0 +1,12 @@
+.favorite-button {
+  margin: 50px;
+}
+
+.favorite-button button {
+  height: 30px;
+  border-radius: 10px;
+}
+
+body button:hover {
+  color: red;
+}

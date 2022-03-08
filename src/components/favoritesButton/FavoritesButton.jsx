@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom"
-import api from "../services/apiConfig"
+import api from "../../services/apiConfig"
+import "./favoritesButton.css"
 
 const FavoritesButton = ({favorite}) => {
   const default_input = {
@@ -17,7 +18,11 @@ const FavoritesButton = ({favorite}) => {
     navigate("/favorites")
   }
 
-  return <button onClick={handleSubmit}>Add to Favorites List</button>
+  return (
+    <div className="favorite-button">
+      <button onClick={handleSubmit}>Add to Favorites List</button>
+    </div>
+  )
 }
 
 export default FavoritesButton

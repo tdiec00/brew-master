@@ -1,12 +1,12 @@
 import {useParams} from "react-router-dom"
 import axios from "axios"
 import {useState, useEffect} from "react"
-import RemoveDuplicates from "./RemoveDuplicates"
-import FavoritesButton from "./FavoritesButton"
-import {DisplayBeerInfoContainer} from "./styles/DisplayBeerInfoContainer.styled"
-import {GuidelineContainer} from "./styles/GuidelineContainer.styled"
-import {IngredientListContainer} from "./styles/IngredientListContainer.styled"
-import {ListContainer} from "./styles/ListContainer.styled"
+import RemoveDuplicates from "../RemoveDuplicates"
+import FavoritesButton from "../FavoritesButton"
+import {DisplayBeerInfoContainer} from "../styles/DisplayBeerInfoContainer.styled"
+
+import {ListContainer} from "../styles/ListContainer.styled"
+import "./displayBeerInfo.css"
 
 const DisplayBeerInfo = () => {
   const params = useParams()
@@ -30,7 +30,7 @@ const DisplayBeerInfo = () => {
       <p>{beerData?.description}</p>
       <FavoritesButton favorite={beerData} />
       <ListContainer>
-        <IngredientListContainer>
+        <div className="ingredients-container">
           <h1>Ingredient List</h1>
           <h2>Yeast List</h2>
           <p>{beerData?.ingredients?.yeast}</p>
@@ -40,8 +40,9 @@ const DisplayBeerInfo = () => {
           })}
           <h2>Hops List</h2>
           <RemoveDuplicates beerData={beerData} />
-        </IngredientListContainer>
-        <GuidelineContainer>
+        </div>
+
+        <div className="ingredients-container">
           <h1>Brewing Guidline</h1>
           <h2>Fermentation Temperature</h2>
           <p>{`${beerData?.method?.fermentation?.temp?.value} degrees ${beerData?.method?.fermentation?.temp?.unit}`}</p>
@@ -49,7 +50,7 @@ const DisplayBeerInfo = () => {
           <p>{`${beerData?.method?.mash_temp[0]?.temp?.value} degrees ${beerData?.method?.mash_temp[0]?.temp?.unit}`}</p>
           <h2>Mash Duration</h2>
           <p>{`${beerData?.method?.mash_temp[0]?.duration} minutes`}</p>
-        </GuidelineContainer>
+        </div>
       </ListContainer>
     </DisplayBeerInfoContainer>
   )

@@ -1,0 +1,38 @@
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 400px;
+  background-color: rgb(246, 238, 238);
+  margin: 15px;
+  box-shadow: 5px 5px 2px 3px rgba(172, 43, 43, 0.2);
+  padding: 10px 20px;
+}
+
+.favorites-container p {
+  height: 200px;
+}
+
+.favorites-container button {
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorites-list-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+}

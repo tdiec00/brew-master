@@ -1,12 +1,9 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const FavoriteListContainer = styled.div`
+  text-align: center;
 
-text-align: center;
-margin: auto;
-max-width: 70vw;
-
-h1{
-  color: brown;
-}
+  h1 {
+    color: brown;
+  }
 `

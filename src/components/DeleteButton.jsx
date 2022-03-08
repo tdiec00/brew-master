@@ -1,3 +1,10 @@
-export default function DeleteButton() {
-  return <button>Delete</button>
+import api from "../services/apiConfig"
+
+export default function DeleteButton(props) {
+  const handleDelete = async () => {
+    await api.delete(props.id)
+    window.location.reload(false)
+  }
+
+  return <button onClick={() => handleDelete()}>Delete</button>
 }

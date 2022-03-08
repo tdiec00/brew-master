@@ -19,7 +19,7 @@ const DisplayBeerInfo = () => {
       setBeerData(res.data[0])
     }
     fetchData()
-  }, [])
+  }, [id])
 
   return (
     <DisplayBeerInfoContainer>

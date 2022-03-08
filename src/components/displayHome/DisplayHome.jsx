@@ -1,5 +1,7 @@
-import Alphabetize from "./Alphabetize"
-import {DisplayHomeContainer} from "./styles/DiplayHomeContainer.styled"
+import Alphabetize from "../Alphabetize"
+import {DisplayHomeContainer} from "../styles/DiplayHomeContainer.styled"
+import beer from "../../images/beer.png"
+import "./displayHome.css"
 
 const DisplayHome = ({datas}) => {
   return (
@@ -12,7 +14,12 @@ const DisplayHome = ({datas}) => {
         </p>
         <h2>Check out below to get started</h2>
         <p>Select from the list of beers below</p>
+
         <Alphabetize datas={datas} />
+        <br />
+        <div className="home-img-container">
+          <img className="home-img" src={beer} alt="4 beer bottles"></img>
+        </div>
       </DisplayHomeContainer>
     </div>
   )

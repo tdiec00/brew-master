@@ -3,8 +3,8 @@ import axios from "axios"
 import {useState, useEffect} from "react"
 import RemoveDuplicates from "../RemoveDuplicates"
 import FavoritesButton from "../FavoritesButton"
+import Alphabetize from "../Alphabetize"
 import {DisplayBeerInfoContainer} from "../styles/DisplayBeerInfoContainer.styled"
-
 import {ListContainer} from "../styles/ListContainer.styled"
 import "./displayBeerInfo.css"
 
@@ -32,24 +32,28 @@ const DisplayBeerInfo = () => {
       <ListContainer>
         <div className="ingredients-container">
           <h1>Ingredient List</h1>
-          <h2>Yeast List</h2>
-          <p>{beerData?.ingredients?.yeast}</p>
-          <h2>Malt List</h2>
-          {beerData?.ingredients?.malt.map((malt) => {
-            return <p key={malt?.name}>{malt?.name}</p>
-          })}
-          <h2>Hops List</h2>
-          <RemoveDuplicates beerData={beerData} />
+          <div className="ingredients-text-container">
+            <p className="title">Yeast List</p>
+            <p>{beerData?.ingredients?.yeast}</p>
+            <p className="title">Malt List</p>
+            {beerData?.ingredients?.malt.map((malt) => {
+              return <p key={malt?.name}>{malt?.name}</p>
+            })}
+            <p className="title">Hops List</p>
+            <RemoveDuplicates beerData={beerData} />
+          </div>
         </div>
 
         <div className="ingredients-container">
           <h1>Brewing Guidline</h1>
-          <h2>Fermentation Temperature</h2>
-          <p>{`${beerData?.method?.fermentation?.temp?.value} degrees ${beerData?.method?.fermentation?.temp?.unit}`}</p>
-          <h2>Mash Temperature</h2>
-          <p>{`${beerData?.method?.mash_temp[0]?.temp?.value} degrees ${beerData?.method?.mash_temp[0]?.temp?.unit}`}</p>
-          <h2>Mash Duration</h2>
-          <p>{`${beerData?.method?.mash_temp[0]?.duration} minutes`}</p>
+          <div className="ingredients-text-container">
+            <p className="title">Fermentation Temperature</p>
+            <p>{`${beerData?.method?.fermentation?.temp?.value} degrees ${beerData?.method?.fermentation?.temp?.unit}`}</p>
+            <p className="title">Mash Temperature</p>
+            <p>{`${beerData?.method?.mash_temp[0]?.temp?.value} degrees ${beerData?.method?.mash_temp[0]?.temp?.unit}`}</p>
+            <p className="title">Mash Duration</p>
+            <p>{`${beerData?.method?.mash_temp[0]?.duration} minutes`}</p>
+          </div>
         </div>
       </ListContainer>
     </DisplayBeerInfoContainer>

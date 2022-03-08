@@ -4,10 +4,10 @@ import DisplayHome from "./displayHome/DisplayHome"
 
 const GetData = () => {
   const [datas, setDatas] = useState([])
+  let beers = []
 
   useEffect(() => {
     const fetchData = async () => {
-      let beers = []
       for (let i = 1; i < 2; i++) {
         let url = `https://api.punkapi.com/v2/beers?page=${i}&per_page=80`
         let res = await axios.get(`${url}`)

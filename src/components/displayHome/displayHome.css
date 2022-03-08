@@ -1,0 +1,11 @@
+.home-img-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .home-img {
+    width: 300px;
+  }
+}

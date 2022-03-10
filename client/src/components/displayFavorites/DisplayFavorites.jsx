@@ -10,6 +10,7 @@ const DisplayFavorites = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log(api)
       let res = await api.get()
       setDatas(res.data.records)
     }

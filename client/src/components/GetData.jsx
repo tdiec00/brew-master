@@ -4,7 +4,8 @@ import DisplayHome from "./displayHome/DisplayHome"
 
 const GetData = () => {
   const [datas, setDatas] = useState([])
-  const [beers, setBeers] = useState([])
+  // const [beers, setBeers] = useState([])
+  // let beers = []
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,16 +13,12 @@ const GetData = () => {
         let url = `https://api.punkapi.com/v2/beers?page=${i}&per_page=80`
         let res = await axios.get(`${url}`)
         let currentBeers = res.data
-        setBeers([...beers, ...currentBeers])
+        setDatas([...datas, ...currentBeers])
       }
-      setDatas(beers)
+      // setDatas(beers)
     }
     fetchData()
   }, [])
-
-  if (beers === []) {
-    return <div>Loading!!!</div>
-  }
 
   return (
     <div>

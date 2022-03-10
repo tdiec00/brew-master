@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Name
 
-## Available Scripts
+Brew Master Index
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+My project will be a simple database that consists of random beers and recipes for beginners looking to brew batches of beer. The site will consist of a drop down menu with a list of beers. The beer choice will include a description and the ingredients required to brew it.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API and Data Sample
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![screenshot of api](./assets/api_screenshot.png)
 
-### `npm test`
+## Wireframes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Wire frame for phone screen size
 
-### `npm run build`
+![Wire frame phone](./assets/phone.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Wire frame for phone desktop screen size
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Wire frame desktop](./assets/desktop.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### MVP/PostMVP
 
-### `npm run eject`
+#### MVP
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Access data from api.
+- Drop down menu with the list of beer names.
+- Generate beer name, description, and ingredient information underneath dropdown menu.
+- Style page with css flexbox.
+- Compatability with phone and desktop screen sizes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### PostMVP
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Add favorites tab that saves choices of beers
+- Add more information including abv, brewer tips, mash temp, and fermentation temp.
+- Style new elements of page (favorites list, additional info, and favorites button)
+- Add in functionality for tablet screen size.
+- Favorites list has clickable links that will bring up favorite beers information
+- Search section to search by ABV%
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Schedule
 
-## Learn More
+This schedule will be used to keep track of your progress throughout the week and align with our expectations.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Day       | Deliverable                                        | Status     |
+| --------- | -------------------------------------------------- | ---------- |
+| Dec 10-12 | Prompt / Wireframes / Priority Matrix / Timeframes | Complete   |
+| Dec 13    | Project Approval                                   | Complete   |
+| Dec 13    | Core Application Structure (HTML, CSS, etc.)       | Complete   |
+| Dec 14    | Pseudocode / actual code                           | Complete   |
+| Dec 15    | Initial Clickable Model                            | Complete   |
+| Dec 16    | MVP                                                | Complete   |
+| Dec 17    | Presentations                                      | Incomplete |
 
-### Code Splitting
+## Priority Matrix
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![priorty matrix](./assets/priority_matrix.png)
 
-### Analyzing the Bundle Size
+## Timeframes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Component                                                                    | Priority | Estimated Time | Time Invested | Actual Time |
+| ---------------------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Basic HTML setup                                                             |    H     |     2.5hrs     |    0.5hrs     |             |
+| Retreive data from API                                                       |    H     |     2.5hrs     |     1hrs      |             |
+| Incorporate API info to DOM                                                  |    H     |      5hrs      |     6hrs      |             |
+| Create form, dropdown list, and add submit/click listener                    |    H     |      3hrs      |     4hrs      |             |
+| Create favorites button and save information to page                         |    M     |      4hr       |     3hrs      |             |
+| Debugging API information and submit/click function                          |    M     |      3hrs      |     2hrs      |             |
+| Set background image, style html, and buttons/dropdown boxes                 |    H     |      3hrs      |     4hrs      |             |
+| CSS flexbox styling                                                          |    H     |      3hrs      |     9hrs      |             |
+| Media query for different size screens                                       |    H     |     2.5hrs     |     3hrs      |             |
+| Cleaning and refactoring code                                                |    M     |      3hrs      |     3hrs      |             |
+| Additional information (abv, brewer tips, mash temp, and fermentation temp.) |    L     |      3hrs      |     2hrs      |             |
+| Styling of new additional information                                        |    L     |      4hrs      |     3hrs      |             |
+| Total:                                                                       |          |      38.5      |     40.5      |             |
 
-### Making a Progressive Web App
+## Code Snippet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
-### Advanced Configuration
+```
+function removeDups(obj) {
+  let newArr = []
+  // push values into new array
+  let arr1 = obj.ingredients.hops
+  for (let i = 0; i < arr1.length; i++) {
+    arr2 = arr1[i].name;
+    newArr.push(arr2)
+  }
+  //**found this code on youtube link "https://www.youtube.com/watch?v=dvPybpgk5Y4"**
+  // removes duplicates and adds to new array
+  obj = {};
+  for (let i of newArr) {
+    obj[i] = true;
+  }
+  let newArr2 = Object.keys(obj);
+  showHops(newArr2);
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+There were duplicate values in the hops array, so I created a function to push those values into a new array, and remove duplicate values from the array to create a new array.
+```
 
-### Deployment
+## Change Log
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Decided not to add a background image.
+Text structure and input boxes styled differently than initial wireframe.
+Favorites list does not allow duplicates.
+Alphabetized values in dropdown list.

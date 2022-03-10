@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom"
 import axios from "axios"
 import {useState, useEffect} from "react"
-import RemoveDuplicates from "../../RemoveDuplicates"
+import RemoveDuplicates from "../RemoveDuplicates"
 import FavoritesButton from "../favoritesButton/FavoritesButton"
 import {DisplayBeerInfoContainer} from "../styles/DisplayBeerInfoContainer.styled"
 import {ListContainer} from "../styles/ListContainer.styled"

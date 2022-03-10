@@ -35,9 +35,9 @@ const DisplayBeerInfo = () => {
             <p className="title">Yeast List</p>
             <p>{beerData?.ingredients?.yeast}</p>
             <p className="title">Malt List</p>
-            {beerData?.ingredients?.malt.map((malt) => {
+            {beerData?.ingredients?.malt.map((malt, index) => {
               return (
-                <div className="list-container">
+                <div className="list-container" key={index}>
                   <p key={malt?.name}>{malt?.name}</p>
                 </div>
               )
